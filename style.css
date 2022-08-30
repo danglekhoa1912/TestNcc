@@ -1,0 +1,126 @@
+body {
+   margin: 0;
+   font-family: "Roboto", sans-serif;
+   position: relative;
+}
+
+.nav ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   width: 10%;
+   background-color: #191718;
+   position: fixed;
+   height: 100%;
+   overflow: auto;
+}
+.nav li {
+   border-bottom: 1px solid #aaaaaa;
+}
+.nav li a {
+   display: block;
+   color: #aaaaaa;
+   padding: 8px 16px;
+   text-decoration: none;
+}
+
+.nav li a:hover:not(.active) {
+   background-color: #555;
+   color: white;
+}
+.container,
+.footer {
+   margin-left: 10%;
+   padding: 20px 7% 0 7%;
+}
+.container .container-image {
+   text-align: center;
+}
+.container-content {
+   background-color: #efefef;
+   text-align: center;
+   margin-top: 30px;
+   padding: 38px 18%;
+   margin-bottom: 40px;
+}
+.container-content .title {
+   font-weight: 700;
+   margin-bottom: 18px;
+}
+.list {
+   display: flex;
+   justify-content: space-between;
+}
+.item-title {
+   font-weight: 700;
+   font-size: 24px;
+   margin-bottom: 18px;
+}
+.item-content > img {
+   float: left;
+}
+.font-content {
+   font-size: 14px;
+   line-height: 19px;
+}
+.footer {
+   padding-top: 30px;
+   padding-bottom: 30px;
+   color: #3e3e3e;
+}
+
+.nav_bar_btn {
+   position: absolute;
+   font-size: 30px;
+   color: #191718;
+   display: none;
+   left: 10px;
+   top: 10px;
+}
+.nav_overlay {
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.3);
+   display: none;
+}
+.nav_mobile {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 150px;
+   /* background-color: #ffff; */
+   transform: translateX(-100%);
+}
+.nav_mobile .nav_mobile_list {
+   width: 100%;
+}
+.nav_input:checked ~ .nav_overlay {
+   display: block;
+}
+
+@media screen and (max-width: 1024px) {
+   .list {
+      flex-direction: column;
+   }
+   .nav_item {
+      display: none;
+   }
+   .container {
+      margin: 0;
+   }
+   .nav_bar_btn {
+      display: block;
+   }
+   .nav_bar_btn:hover {
+      cursor: pointer;
+   }
+   .nav_input:checked ~ .nav_mobile {
+      /* display: block; */
+      transform: translateX(0%);
+   }
+}
